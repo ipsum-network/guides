@@ -6,6 +6,7 @@
 ### Start your Linux VPS Masternode
 
   * Click the "Start alias" button on the lower left corner of the window
+  * Select the alias you wish to start
 
 ### Checking your Linux VPS Masternode Status
 
