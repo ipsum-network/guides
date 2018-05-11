@@ -39,6 +39,7 @@
 
 * From the terminal session, run the following commands
 ```
+mkdir -p ~/.ips
 nano ~/.ips/ips.conf
 ```
 
