@@ -24,12 +24,12 @@ These guides are designed to assist you in installing and configuring an IPSUM s
 ### Masternode
   * Dedicated Linux (Ubuntu 16.04) VPS from [Vultr](https://www.vultr.com/) or [Digital Ocean](https://www.digitalocean.com/)
   
-## Installation Types
+## Masternode Installation Types
 
 ### Windows Wallet with Linux VPS
 Choose this installation guide if you are running a Windows IPSUM wallet holding the collateral for your masternode 
 
-## Cold Wallet
+#### Cold Wallet
 Collateral coins are not stored on the masternode, rather in a Windows wallet.
 
 [Windows Cold Wallet and Linux VPS Installation Guide](WINDOWS.md)
