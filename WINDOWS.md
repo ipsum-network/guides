@@ -55,13 +55,13 @@ following line
 ### Start your Linux VPS Masternode
 *Note the alias you set when you created your masternode.conf*
 
-  * Go to debug console (Tools - > Debug Console) and enter the following command 
-  ```startmasternode alias 0 <alias>```
+  * From the Linux VPS terminal session, run the following command
+  ```./ips-cli masternode start alias 0 <alias>```
 
 ### Checking your Linux VPS Masternode Status
 
-  * Still in the debug console, enter the following command
-  ```masternode status```
+  * Still in Linux VPS terminal session, enter the following command
+  ```./ips-cli masternode status```
   * Your output should be similar to the following
 ```
   {
