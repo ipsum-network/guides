@@ -45,6 +45,34 @@ following line
   * Example
     * ```mn1 167.99.234.180:22331 5dGdBDCYqMae1oRhH7djaBdyAfCGiJV9WgCFSVGmFwF6e5x3vpt 25dGdBDCYqasd123Mae1oRhH7asd123djaBdyAfCGiJV9WgCFSVGmFwF6e5x3vpt 0```
     
-## Install the Linux VPS IPSUM Daemon
+### Install the Linux VPS IPSUM Daemon
 
 [Linux Daemon Installation Guide](LINUX.md)
+
+### Restart the IPSUM Windows Wallet
+*Close the wallet and reopen it*
+
+### Start your Linux VPS Masternode
+*Note the alias you set when you created your masternode.conf*
+
+  * Go to debug console (Tools - > Debug Console) and enter the following command 
+  ```startmasternode alias 0 <alias>```
+
+### Checking your Linux VPS Masternode Status
+
+  * Still in the debug console, enter the following command
+  ```masternode status```
+  * Your output should be similar to the following
+```
+  {
+    "txhash" : "<txid>",
+    "outputidx" : <txid output>,
+    "netaddr" : "<externalip>:22331",
+    "addr" : "<wallet address>",
+    "status" : 4,
+    "message" : "Masternode successfully started"
+  }
+```
+
+### Profit
+*Newly started masternodes take about 24 to 28 hours before they start recieving block rewards, so please be patient.*
