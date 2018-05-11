@@ -70,8 +70,17 @@ masternodeprivkey=<masternode private key>
 ./ipsd
 ```
 
+## Wait for the IPSUM Linux Daemon to sync
+
+* From the terminal session, run the following commands
+```
+./ips-cli getinfo
+```
+* Compare the "Block Height" value with the latest from the [IPSUM block explorer](https://explorer.ipsum.network/). When those are the same, your daemon is synchronized 
+
+
 ## Finish Up
-*Return back to the operating system specific guide and complete the final steps
+*Return back to the operating system specific guide and complete the final steps*
 
 ### Windows Cold Wallet and Linux VPS Installation
 
