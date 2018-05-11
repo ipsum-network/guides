@@ -1,5 +1,5 @@
 # IPSUM Staking and Masternode
-These guides are designed to assist you in installing and configuring an IPSUM staking wallet or IPSUM masternode. 
+*These guides are designed to assist you in installing and configuring an IPSUM staking wallet or IPSUM masternode.* 
 
 ## Requirements
 
@@ -27,27 +27,27 @@ These guides are designed to assist you in installing and configuring an IPSUM s
 ## Masternode Installation Types
 
 ### Windows Wallet with Linux VPS
-Choose this installation guide if you are running a Windows IPSUM wallet holding the collateral for your masternode 
+*Choose this installation guide if you are running a Windows IPSUM wallet holding the collateral for your masternode*
 
 #### Cold Wallet
-Collateral coins are not stored on the masternode, rather in a Windows wallet.
+*Collateral coins are not stored on the masternode, rather in a Windows wallet.*
 
 [Windows Cold Wallet and Linux VPS Installation Guide](WINDOWS.md)
 
 ### Linux Wallet and VPS
-Choose this installation guide if you are running a Linux wallet holding the collateral for your masternode
+*Choose this installation guide if you are running a Linux wallet holding the collateral for your masternode*
 
 #### Hot Wallet
-This is for advanced users and should not be used unless you understand what you are doing. Collateral coins are stored on the masternode.
+*This is for advanced users and should not be used unless you understand what you are doing. Collateral coins are stored on the masternode.*
 
 [Linux VPS Hot Wallet Installation Guide](LINUX-HOT.md)
 
 #### Cold Wallet
-Collateral coins are not stored on the masternode, rather in a Linux wallet.
+*Collateral coins are not stored on the masternode, rather in a Linux wallet.*
 
 [Linux VPS Cold Wallet Installation Guide](LINUX-COLD.md)
 
 ### Docker
-Choose this installation if your are a power user with Docker
+*Choose this installation if your are a power user with Docker*
 
 [Docker Installation Guide](DOCKER.md)
