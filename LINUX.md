@@ -82,10 +82,10 @@ masternodeprivkey=<masternode private key>
 ```
 * Compare the "Block Height" value with the latest from the [IPSUM block explorer](https://explorer.ipsum.network/). When those are the same, your daemon is synchronized 
 
-### Start your Linux VPS Masternode from Windows
+### Start your Linux VPS Masternode from Windows (For Windows Wallet Users)
 
 [Starting your Linux VPS Masternode from Windows](LINUX-MN-START-WINDOWS.md)
 
-### Start your Linux VPS masternode from Linux
+### Start your Linux VPS masternode from Linux (For Linux Wallet Users)
 
 [Starting your Linux VPS Masternode](LINUX-MN-START.md)
