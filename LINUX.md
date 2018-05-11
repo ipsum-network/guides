@@ -70,4 +70,11 @@ masternodeprivkey=<masternode private key>
 ./ipsd
 ```
 
+## Finish Up
+*Return back to the operating system specific guide and complete the final steps
+
+### Windows Cold Wallet and Linux VPS Installation
+
+[Windows Cold Wallet and Linux VPS Installation Guide](WINDOWS.md)
+
 
