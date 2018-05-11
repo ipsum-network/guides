@@ -1,1 +1,1 @@
-# Linux Cold Wallet Masternode Installation
+# Linux Wallet Installation
