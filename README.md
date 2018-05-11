@@ -11,7 +11,7 @@
 ### Masternode
   * Exactly 5000.00 IPS as collateral
   * An internet addressable IP address
-  * Port 22231 forwarded
+  * Port 22331 forwarded
   * At least 25GB of free space
   * Synchronized IPSUM wallet
   
