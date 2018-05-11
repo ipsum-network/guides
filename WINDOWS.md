@@ -44,3 +44,7 @@ following line
     * ```<alias> <externalip>:22331 <masternode private key> <collateral txid> <collateral txid output>```
   * Example
     * ```mn1 167.99.234.180:22331 5dGdBDCYqMae1oRhH7djaBdyAfCGiJV9WgCFSVGmFwF6e5x3vpt 25dGdBDCYqasd123Mae1oRhH7asd123djaBdyAfCGiJV9WgCFSVGmFwF6e5x3vpt 0```
+    
+## Install the Linux VPS IPSUM Daemon
+
+[Linux Daemon Installation Guide](LINUX.md)
