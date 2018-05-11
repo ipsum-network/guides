@@ -15,9 +15,12 @@
   
 ## Download the IPSUM Linux Daemon
 
-  * From the terminal session, run the following commands
+  * From the terminal session, run the following command
   ```
   wget https://github.com/ipsum-network/ips/releases/download/v3.0.0.2/ips-3.0.0.2-linux.tar.gz
+  ```
+  * From the terminal session, run the following command
+  ```
   tar xvzf ips-3.0.0.2-linux.tar.gz
   ```
   
