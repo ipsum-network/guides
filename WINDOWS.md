@@ -4,7 +4,7 @@
 ## Install the latest released IPSUM Windows Wallet
 *Both 32bit and 64bit variants are available* 
 
-[Wallet Releases](https://github.com/ipsum-ce/ips/releases)
+[Wallet Releases](https://github.com/ipsum-network/ips/releases)
 
 ## Open the IPSUM Windows Wallet
 
