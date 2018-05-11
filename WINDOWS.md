@@ -47,7 +47,7 @@ following line
     
 ### Install the Linux VPS IPSUM Daemon
 
-[Linux Daemon Installation Guide](LINUX.md)
+[Linux VPS IPSUM Daemon Installation Guide](LINUX.md)
 
 ### Restart the IPSUM Windows Wallet
 *Close the wallet and reopen it*
