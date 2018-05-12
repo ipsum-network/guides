@@ -6,6 +6,8 @@
 ### Start your Linux VPS Masternode
 
   * Click the "Start alias" button on the lower left corner of the window
+    * If you see the error "Error: invalid IP" try the following
+      * Go to debug console (Tools - > Debug Console) and enter the following command ```startmasternode all 0```
   * Select the alias you wish to start
 
 ### Checking your Linux VPS Masternode Status
