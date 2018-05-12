@@ -55,7 +55,7 @@ docker run -dit --name ipsd -p 22331:22331 --restart=always -v /home/user/blockc
 
 * From the terminal session, run the following commands
 ```
-docker exec -it ipsd /ips/src/ips-cli ips-cli getinfo
+docker exec -it ipsd /ips/src/ips-cli getinfo
 ```
 * Compare the "Block Height" value with the latest from the [IPSUM block explorer](https://explorer.ipsum.network/). When those are the same, your daemon is synchronized 
 
