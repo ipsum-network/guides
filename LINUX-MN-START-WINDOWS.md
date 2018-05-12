@@ -4,6 +4,7 @@
 *Close your wallet and open it back up*
 
 ### Start your Linux VPS Masternode
+*Your wallet must be unlocked*
 
   * Click the "Start alias" button on the lower left corner of the window
     * If you see the error "Error: invalid IP" try the following
