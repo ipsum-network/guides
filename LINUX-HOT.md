@@ -17,7 +17,7 @@
 ```
 * Record this key, you'll need it in later steps
 
-## Get your IPSUM Windows Wallet Address
+## Get your IPSUM Linux Wallet Address
 
   * From the terminal session, run the following commands
   ```
@@ -37,10 +37,50 @@
   ```./ips-cli masternode outputs```
   * Record this value, as you'll need it in the next step
 
-### Create your Masternode configuration file
+## Create your Masternode configuration file
 
   * In the ~/.ips directory, edit the masternode.conf as described below
   * Replace each < > field with the information obtained from the steps above.
     * ```<alias> <externalip>:22331 <masternode private key> <collateral txid> <collateral txid output>```
   * Example
     * ```mn1 167.99.234.180:22331 5dGdBDCYqMae1oRhH7djaBdyAfCGiJV9WgCFSVGmFwF6e5x3vpt 25dGdBDCYqasd123Mae1oRhH7asd123djaBdyAfCGiJV9WgCFSVGmFwF6e5x3vpt 0```
+    
+## Edit your IPSUM Linux Daemon configuration file
+
+* From the terminal session, run the following commands
+```
+cd  ~/.ips
+nano ~/.ips/ips.conf
+```
+
+* Uncomment the masternode entries, replace any < > field with your information
+```
+rpcuser=<rpcusername>
+rpcpassword=<rpcpassword>
+rpcport=22332
+listen=1
+server=1
+daemon=1
+staking=0
+rpcallowip=127.0.0.1
+logtimestamps=1
+#masternode=1
+port=22331
+externalip=<externalip>:22331
+#masternodeprivkey=<masternode private key>
+```
+
+* Save and Exit
+
+## Stop the IPSUM Linux Daemon and restart it
+
+* From the terminal session, run the following commands
+```
+./ips-cli stop
+./ipsd
+```
+
+### Start your Linux VPS masternode from Linux (For Linux Wallet Users)
+*Ensure the wallet is sync before proceeding*
+
+[Starting your Linux VPS Masternode](LINUX-MN-START-LINUX.md)
