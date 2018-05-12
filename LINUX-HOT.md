@@ -83,6 +83,6 @@ externalip=<externalip>:22331
 ```
 
 ### Start your Linux VPS masternode from Linux (For Linux Wallet Users)
-*Ensure the wallet is sync before proceeding*
+*Ensure the wallet is in sync before proceeding*
 
 [Starting your Linux VPS Masternode](LINUX-MN-START-LINUX.md)
