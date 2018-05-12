@@ -107,4 +107,31 @@ docker restart ipsd
 
 ### Start your Linux VPS masternode from Docker
 *Ensure the wallet is in sync before proceeding*
+*Note the alias you set when you created your masternode.conf*
+
+  * From the terminal session, run the following commands
+  ```
+  docker exec -it ipsd ips-cli masternode start alias 0 <alias>
+  ```
+
+### Checking your Linux VPS Masternode Status
+
+  * From the terminal session, run the following commands
+  ```
+  docker exec -it ipsd ips-cli masternode status
+  ```
+  * Your output should be similar to the following
+```
+  {
+    "txhash" : "<txid>",
+    "outputidx" : <txid output>,
+    "netaddr" : "<externalip>:22331",
+    "addr" : "<wallet address>",
+    "status" : 4,
+    "message" : "Masternode successfully started"
+  }
+```
+
+### Profit
+*Newly started masternodes take about 24 to 28 hours before they start recieving block rewards, so please be patient.*
 
