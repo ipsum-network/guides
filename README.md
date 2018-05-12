@@ -23,6 +23,16 @@
   
 ### Masternode
   * Dedicated Linux (Ubuntu 16.04) VPS from [Vultr](https://www.vultr.com/) or [Digital Ocean](https://www.digitalocean.com/)
+
+## Staking Installation Types
+
+### Windows
+
+[Windows Staking Guide](STAKING-WINDOWS.md)
+
+### Linux
+
+[Linux Staking Guide](STAKING-LINUX.md)
   
 ## Masternode Installation Types
 
