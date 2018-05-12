@@ -135,3 +135,13 @@ docker restart ipsd
 ### Profit
 *Newly started masternodes take about 24 to 28 hours before they start recieving block rewards, so please be patient.*
 
+### Useful Commands
+
+#### Watch the daemon logs
+
+  * From the terminal session, run the following commands
+  ```
+  docker logs -f ipsd
+  ```
+
+
