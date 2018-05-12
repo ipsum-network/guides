@@ -47,7 +47,7 @@ nano ~/.ips/ips.conf
 ```
 
 * Now add the following lines to this file, replacing any < > field with your information
-  * Note: If your setting up a Linux Hot Wallet, comment out the masternode entries
+  * Note: If your setting up a Linux Hot/Cold Wallet, comment out the masternode entries
 ```
 rpcuser=<rpcusername>
 rpcpassword=<rpcpassword>
