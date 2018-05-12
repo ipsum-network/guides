@@ -88,4 +88,10 @@ masternodeprivkey=<masternode private key>
 
 ### Start your Linux VPS masternode from Linux (For Linux Wallet Users)
 
-[Starting your Linux VPS Masternode](LINUX-MN-START.md)
+#### Hot Wallet
+
+Return back to the [Linux Hot Wallet Masternode Installation](LINUX-HOT.md)
+
+#### Cold Wallet
+
+Return back to the [Linux Cold Wallet Masternode Installation](LINUX-COLD.md)
