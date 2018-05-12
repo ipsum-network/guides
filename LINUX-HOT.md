@@ -34,7 +34,9 @@
 *Once you have recieved your masternode collateral transaction in your Windows wallet proceed with this step*
 
   * From the terminal session, run the following commands
-  ```./ips-cli masternode outputs```
+  ```
+  ./ips-cli masternode outputs
+  ```
   * Record this value, as you'll need it in the next step
 
 ## Create your Masternode configuration file
