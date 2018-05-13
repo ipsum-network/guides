@@ -48,7 +48,7 @@ externalip=<externalip>:22331
 
 * From the terminal session, run the following commands
 ```
-docker run -dit --name ipsd -p 22331:22331 --restart=always -v /home/user/blockchains/ips:/root/.ips ipscoin/ipsd
+docker run -dit --name ipsd -p 22331:22331 --restart=always -v /home/user/blockchains/ips:/root/.ips ipsumnetwork/ipsd
 ```
 
 ## Wait for the IPSUM Linux Daemon to sync
