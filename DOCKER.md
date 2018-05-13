@@ -63,7 +63,7 @@ docker exec -it ipsd /ips/src/ips-cli getinfo
 
 * From the terminal session, run the following commands
 ```
-docker exec -it ipsd ips-cli masternode genkey
+docker exec -it ipsd /ips/src/ips-cli masternode genkey
 ```
 * Record this key, you'll need it in later steps
 
@@ -71,7 +71,7 @@ docker exec -it ipsd ips-cli masternode genkey
 
   * From the terminal session, run the following commands
   ```
-  docker exec -it ipsd ips-cli getaccountaddress 0
+  docker exec -it ipsd /ips/src/ips-cli getaccountaddress 0
   ```
   * Record this address, you'll need it in the next step
   
@@ -85,7 +85,7 @@ docker exec -it ipsd ips-cli masternode genkey
 
   * From the terminal session, run the following commands
   ```
-  docker exec -it ipsd ips-cli masternode outputs
+  docker exec -it ipsd /ips/src/ips-cli masternode outputs
   ```
   * Record this value, as you'll need it in the next step
 
@@ -101,7 +101,7 @@ docker exec -it ipsd ips-cli masternode genkey
 
 * From the terminal session, run the following commands
 ```
-docker exec -it ipsd ips-cli stop
+docker exec -it ipsd /ips/src/ips-cli stop
 docker restart ipsd
 ```
 
@@ -111,14 +111,14 @@ docker restart ipsd
 
   * From the terminal session, run the following commands
   ```
-  docker exec -it ipsd ips-cli masternode start alias 0 <alias>
+  docker exec -it ipsd /ips/src/ips-cli masternode start alias 0 <alias>
   ```
 
 ### Checking your Linux VPS Masternode Status
 
   * From the terminal session, run the following commands
   ```
-  docker exec -it ipsd ips-cli masternode status
+  docker exec -it ipsd /ips/src/ips-cli masternode status
   ```
   * Your output should be similar to the following
 ```
