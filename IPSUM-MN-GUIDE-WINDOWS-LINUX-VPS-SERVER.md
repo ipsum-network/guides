@@ -82,7 +82,7 @@ Using the login credentials provided by your VPS provider, login using Putty
 ```sudo apt-get -y dist-upgrade```
 
 * Let’s make sure that we have a 3G swapfile. The following instruction set from Vultr has helped many times.
-https://www.vultr.com/docs/setup-swap-file-on-linux
+(https://www.vultr.com/docs/setup-swap-file-on-linux)
 * Once that has been completed, it is now time to download the latest version of the wallet onto your VPS. Paste from the instructions below.
 
 ```wget https://github.com/ipsum-network/ips/releases/download/v3.0.0.2/ips-3.0.0.2-linux.tar.gz```
@@ -115,7 +115,8 @@ https://www.vultr.com/docs/setup-swap-file-on-linux
 
 * Copy/paste:
 
-```rpcuser=<rpcusername>
+```
+rpcuser=<rpcusername>
 rpcpassword=<rpcpassword>
 rpcport=22332
 listen=1
@@ -128,7 +129,8 @@ masternode=1
 port=22331
 externalip=<externalip>:22331
 masternodeprivkey=<masternode private key>
-<INSERT NODES HERE>```
+<INSERT NODES HERE>
+```
 
 * For <rpcusername> and <rpc password>, use any text you would like. You will not need to remember it, but once you start the daemon, do not change it.
 * masternodeprivkey=<your masternode genkey result from the notepad file>
