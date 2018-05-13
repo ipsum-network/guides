@@ -134,7 +134,7 @@ masternodeprivkey=<masternode private key>
 
 * For <rpcusername> and <rpc password>, use any text you would like. You will not need to remember it, but once you start the daemon, do not change it.
 * masternodeprivkey=<your masternode genkey result from the notepad file>
-* As you might imagine, you insert the seed nodes where <INSERT NODES HERE> is. Find the list here. It is the same as what you have used in your Windows Wallet.
+* As you might imagine, you insert the seed nodes where <INSERT NODES HERE> is. Find the list at )https://github.com/ipsum-network/seeds/blob/master/README.md). It is the same as what you have used in your Windows wallet.
 
 ```reboot```
 
