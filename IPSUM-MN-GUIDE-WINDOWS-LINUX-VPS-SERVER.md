@@ -12,15 +12,14 @@
 
 ## Setup Windows Wallet:
 
-* Download the Windows 3.0.0.2 wallet from 
-(https://github.com/ipsum-network/ips/releases/download/v3.0.0.2/ips-3.0.0.2-win64-setup.exe)
+* Download the latest Windows wallet from here [Releases](https://github.com/ipsum-network/ips/releases)
 * Run the installer, and leave everything as default.
 * Run the qt, then close it again.
 
 ### Syncing
 
 * Open the ips.conf file. It can be found in C:/Users/<Your User>/AppData/Roaming/IPS.
-* Copy the addnodes from https://github.com/ipsum-network/seeds/blob/master/README.md into this file, then save it.
+* Copy the addnodes from [here](https://github.com/ipsum-network/seeds/blob/master/README.md) into this file, then save it.
 * Re-open your IPS qt. It will now sync much more quickly.
 
 ### Addresses
@@ -83,7 +82,7 @@ Using the login credentials provided by your VPS provider, login using Putty
 
 * Let’s make sure that we have a 3G swapfile. The following instruction set from Vultr has helped many times.
 (https://www.vultr.com/docs/setup-swap-file-on-linux)
-* Once that has been completed, it is now time to download the latest version of the wallet onto your VPS. Paste from the instructions below.
+* Once that has been completed, it is now time to download the latest version of the wallet onto your VPS. For now, that is 3.0.0.2 Paste from the instructions below.
 
 ```wget https://github.com/ipsum-network/ips/releases/download/v3.0.0.2/ips-3.0.0.2-linux.tar.gz```
 
@@ -134,7 +133,7 @@ masternodeprivkey=<masternode private key>
 
 * For <rpcusername> and <rpc password>, use any text you would like. You will not need to remember it, but once you start the daemon, do not change it.
 * masternodeprivkey=<your masternode genkey result from the notepad file>
-* As you might imagine, you insert the seed nodes where <INSERT NODES HERE> is. Find the list at )https://github.com/ipsum-network/seeds/blob/master/README.md). It is the same as what you have used in your Windows wallet.
+* As you might imagine, you insert the seed nodes where <INSERT NODES HERE> is. Find the list [here](https://github.com/ipsum-network/seeds/blob/master/README.md). It is the same as what you have used in your Windows wallet.
 
 ```reboot```
 
