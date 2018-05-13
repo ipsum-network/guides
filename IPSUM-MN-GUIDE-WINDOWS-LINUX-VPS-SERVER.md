@@ -1,7 +1,7 @@
 # IPSUM_MN_Guide_Windows+Linux_VPS_Server
 
 ## Requirements:
-*A local Masternode Wallet with the required Masternode collateral (5000 IPS).
+* A local Masternode Wallet with the required Masternode collateral (5000 IPS).
 * A Linux VPS with a Static IP Address.
 
 * For this guide we are using a Local Windows Wallet with Ubuntu 16.04 running on the VPS. 
