@@ -148,7 +148,11 @@ masternodeprivkey=<masternode private key>
 * Under Tools in your Windows Wallet, select “Open Masternode Configuration File”.
 * Input your Masternode info. It should look like this:
 
-* <MN ALIAS> <VPS_IP:22331> <MN GENKEY> <TXHash> <TXIndex>
+* ```<MN ALIAS><VPS_IP:22331><MN GENKEY><TXHash><TXIndex>```
+
+* For example
+
+* ```IPSUM_MN1 167.99.234.180:22331 5dGdBDCYqMae1oRhH7djaBdyAfCGiJV9WgCFSVGmFwF6e5x3vpt 25dGdBDCYqasd123Mae1oRhH7asd123djaBdyAfCGiJV9WgCFSVGmFwF6e5x3vpt 0```
 
 * Save and close this file.
 * (NOTE) If you plan on running multiple MNs from the one Windows wallet, you simply have to enter a new line with the unique information for that MN.
