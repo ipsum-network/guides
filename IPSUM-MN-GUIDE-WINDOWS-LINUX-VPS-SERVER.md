@@ -164,4 +164,13 @@ masternodeprivkey=<masternode private key>
 * Close your Putty window.
 * Wait for the payments to roll in. This will take ~18-24 hours for your first one, and roughly every 6 hours after that.
 
+## Post accomplishment in Discord	
+
+*After you have setup everything please take a screen capture of your node running in your wallet or type the IP and post it in #mn-hodler.
+
+[Discord Channel](https://discordapp.com/channels/443435262916427776/443633482468425729)
+
+Example:
+144.202.51.69:22331
+
 ## Congratulations, you are now the operator of your very own IPS Masternode! This will support the integrity of the IPS network, as well as secure a passive income well into the future.
