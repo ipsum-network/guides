@@ -6,7 +6,7 @@ Both 32bit and 64bit variants are available
 
 [Wallet Releases](https://github.com/ipsum-network/ips/releases)
 
-## Open the IPSUM Windows Wallet
+## Basic wallet Staking
 From inside your wallet create a passphrase
 ```
 Settings -> Encrypt Wallet
