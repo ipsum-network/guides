@@ -22,7 +22,7 @@
   * Dedicated machine for your wallet, as you want to keep it online as much as possible
   
 ### Masternode
-  * Dedicated Linux (Ubuntu 16.04) VPS from [Vultr](https://www.vultr.com/) or [Digital Ocean](https://www.digitalocean.com/)
+  * Dedicated Linux (Ubuntu 16.04) VPS from [Vultr](https://www.vultr.com/?ref=7426211) or [Digital Ocean](https://m.do.co/c/0d726bd8cfdc)
 
 ## Staking Installation Types
 
