@@ -39,6 +39,8 @@ Note: Remember transaction in your wallet will need 101 conformations to be elig
 
 ## Indexing coins for Staking.
 
+In this tutorial we will be indexing 2000 IPS into a index of 1000 IPS each
+
 * From wallet turn on coin control
 
 ```
@@ -57,9 +59,9 @@ Tools -> Debug console -> (Type) getaccountaddress 0
 
 	From wallet navigate to send coin section.
 
-		Make sure Split UTXO is checked and enter 2 for the number of splits in the box to the right of the check box.
+		Make sure Split UTXO is checked, enter 2 for the number of splits in the box to the right of the check box.
 
-			Now enter the address you just generated in the Pay To: (Address you generated from previous step)
+		Now enter the address you just generated in the Pay To: (Address you generated from previous step)
 
 	Next enter the amount of coins to split (2000)
 
@@ -80,6 +82,6 @@ You will need to compare which address is which if you didnt assign a label at t
 
 	When you know which address is which you can right click on the address and click rename.
 
-		I personally rename in the split method i assigned when i made the index (Stake 2 (1000)
+	I personally rename in the split method i assigned when i made the index (Stake 2 (1000)
 
-			This will allow you to identify which index is gaining a staking reward and how often in the inputs section.
+	This will allow you to identify which index is gaining a staking reward and how often in the inputs section.
