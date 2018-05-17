@@ -36,6 +36,10 @@
   
 ## Masternode Installation Types
 
+### Upgrading an existing installation for the mandatory network upgrade (v3.1.0)
+
+[v3.1.0 Upgrade Guide](v3.1-UPDATE.md)
+
 ### Windows Wallet with Linux VPS
 *Choose this installation guide if you are running a Windows IPSUM wallet holding the collateral for your masternode*
 
