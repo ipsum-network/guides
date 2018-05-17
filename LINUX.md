@@ -17,11 +17,11 @@
 
   * From the terminal session, run the following command
   ```
-  wget https://github.com/ipsum-network/ips/releases/download/v3.0.0.2/ips-3.0.0.2-linux.tar.gz
+  wget https://github.com/ipsum-network/ips/releases/download/v3.1.0.0/ips-3.1.0-linux.tar.gz
   ```
   * From the terminal session, run the following command
   ```
-  tar xvzf ips-3.0.0.2-linux.tar.gz
+  tar -xvf ips-3.1.0-linux.tar.gz
   ```
   
 ## Install IPSUM Linux Daemon Runtime Dependencies
