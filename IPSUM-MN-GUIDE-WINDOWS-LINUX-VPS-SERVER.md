@@ -139,7 +139,7 @@ masternodeprivkey=<masternode private key>
 
 * Reopen Putty, and use the same log in credentials as before. When the command window appears, you will notice the user name has changed to reflect what you called the server at deployment
 
-```./ipsd```
+```./ips-3.1.0/bin/ipsd```
 
 ## MASTERNODE START
 
