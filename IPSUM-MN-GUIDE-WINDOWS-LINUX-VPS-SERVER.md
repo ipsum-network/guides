@@ -84,11 +84,11 @@ Using the login credentials provided by your VPS provider, login using Putty
 (https://www.vultr.com/docs/setup-swap-file-on-linux)
 * Once that has been completed, it is now time to download the latest version of the wallet onto your VPS. For now, that is 3.0.0.2 Paste from the instructions below.
 
-```wget https://github.com/ipsum-network/ips/releases/download/v3.0.0.2/ips-3.0.0.2-linux.tar.gz```
+```wget https://github.com/ipsum-network/ips/releases/download/v3.1.0.0/ips-3.1.0-linux.tar.gz```
 
 * Then we will unpack this file: (This is a very important step).
 
-```tar xvzf ips-3.0.0.2-linux.tar.gz```
+```tar -xvf ips-3.1.0-linux.tar.gz```
 
 * Once that is complete, run the following commands in sequence. Note, some will take a long time, so it is important not to interfere.
 
