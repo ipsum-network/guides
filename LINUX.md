@@ -72,14 +72,14 @@ masternodeprivkey=<masternode private key>
 
 * From the terminal session, run the following commands
 ```
-./ipsd
+./ips-3.1.0/bin/ipsd
 ```
 
 ## Wait for the IPSUM Linux Daemon to sync
 
 * From the terminal session, run the following commands
 ```
-./ips-cli getinfo
+./ips-3.1.0/bin/ips-cli getinfo
 ```
 * Compare the "Block Height" value with the latest from the [IPSUM block explorer](https://explorer.ipsum.network/). When those are the same, your daemon is synchronized 
 
