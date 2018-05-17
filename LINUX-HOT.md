@@ -13,7 +13,7 @@
 
 * From the terminal session, run the following commands
 ```
-./ips-cli masternode genkey
+./ips-3.1.0/bin/ips-cli masternode genkey
 ```
 * Record this key, you'll need it in later steps
 
@@ -21,7 +21,7 @@
 
   * From the terminal session, run the following commands
   ```
-  ./ips-cli getaccountaddress 0
+  ./ips-3.1.0/bin/ips-cli getaccountaddress 0
   ```
   * Record this address, you'll need it in the next step
   
@@ -35,7 +35,7 @@
 
   * From the terminal session, run the following commands
   ```
-  ./ips-cli masternode outputs
+  ./ips-3.1.0/bin/ips-cli masternode outputs
   ```
   * Record this value, as you'll need it in the next step
 
@@ -78,8 +78,8 @@ externalip=<externalip>:22331
 
 * From the terminal session, run the following commands
 ```
-./ips-cli stop
-./ipsd
+./ips-3.1.0/bin/ips-cli stop
+./ips-3.1.0/bin/ipsd
 ```
 
 ### Start your Linux VPS masternode from Linux (For Linux Wallet Users)
