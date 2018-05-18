@@ -111,7 +111,7 @@ docker restart ipsd
 
   * From the terminal session, run the following commands
   ```
-  docker exec -it ipsd /ips/src/ips-cli masternode start alias 0 <alias>
+  docker exec -it ipsd /ips/src/ips-cli startmasternode alias 0 <alias>
   ```
 
 ### Checking your Linux VPS Masternode Status
