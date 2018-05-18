@@ -1,4 +1,4 @@
-# CryptoNeverSleeps IPSUM Update Scripti
+# CryptoNeverSleeps IPSUM Update Script
 * If you used CryptoNeverSleeps installation script, this update will work for you*
 
 ## Linux VPS
