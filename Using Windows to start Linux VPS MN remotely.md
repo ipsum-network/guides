@@ -1,4 +1,5 @@
 # Starting your Linux VPS Masternode from Windows
+*Please only use this guide if you have completed your masternode.conf file.
 
 ## Restart your Windows Wallet
 *Close your wallet and open it back up*
