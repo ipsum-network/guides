@@ -46,7 +46,7 @@
 #### Cold Wallet
 *Collateral coins are not stored on the masternode, rather in a Windows wallet.*
 
-[https://github.com/ipsum-network/guides/blob/master/Windows%20Wallet%20-%20Linux%20VPS%20MN%20-%20Complete.md] (Windows Wallet - Linux VPS MN - Complete.md.md)
+[Windows Wallet - Linux VPS MN - Complete.md](Windows Wallet - Linux VPS MN - Complete.md.md)
 
 ### Linux Wallet and VPS
 *Choose this installation guide if you are running a Linux wallet holding the collateral for your masternode*
