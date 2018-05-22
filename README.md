@@ -28,11 +28,11 @@
 
 ### Windows
 
-[Windows Staking Guide](STAKING-WINDOWS.md)
+[Windows Staking Guide](Staking_for_Windows.md)
 
 ### Linux
 
-[Linux Staking Guide](STAKING-LINUX.md)
+[Linux Staking Guide](Staking_for_Linux.md)
   
 ## Masternode Installation Types
 
