@@ -98,13 +98,13 @@ Using the login credentials provided by your VPS provider, login using Putty
 
 ```sudo apt-get install libzmq3-dev libminiupnpc-dev libssl-dev libevent-dev -y```
 
-```apt-get -y install git automake build-essential libtool autotools-dev autoconf pkg-config libssl-dev libboost-all-dev software-properties-common```
+```sudo apt-get -y install git automake build-essential libtool autotools-dev autoconf pkg-config libssl-dev libboost-all-dev software-properties-common```
 
-```add-apt-repository ppa:bitcoin/bitcoin``` (hit enter at prompt)
+```sudo add-apt-repository ppa:bitcoin/bitcoin``` (hit enter at prompt)
 
-```apt-get update```
+```sudo apt-get update```
 
-```apt-get install libdb4.8-dev libdb4.8++-dev libminiupnpc-dev libevent-dev```
+```sudo apt-get install libdb4.8-dev libdb4.8++-dev```
 
 ```sudo apt-get install htop mc```
 
