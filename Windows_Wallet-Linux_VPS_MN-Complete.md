@@ -82,7 +82,7 @@ Using the login credentials provided by your VPS provider, login using Putty
 
 * Let’s make sure that we have a 3G swapfile. The following instruction set from Vultr has helped many times.
 (https://www.vultr.com/docs/setup-swap-file-on-linux)
-* Once that has been completed, it is now time to download the latest version of the wallet onto your VPS. For now, that is 3.0.0.2 Paste from the instructions below.
+* Once that has been completed, it is now time to download the latest version of the wallet onto your VPS. For now, that is 3.1.0.0 Paste from the instructions below.
 
 ```wget https://github.com/ipsum-network/ips/releases/download/v3.1.0.0/ips-3.1.0-linux.tar.gz```
 
