@@ -69,7 +69,8 @@ and edit the config file:
 
 Copy this in the file (choose whatever you like for <rpcusername> and <rpcpassword> and never touch them later; you should have created a masternode private key with your wallet (ips-qt) using the debug console: masternode genkey or ./ips-cli masternode genkey if you're using the cli):
 
-```rpcuser=<rpcusername>
+```
+rpcuser=<rpcusername>
 rpcpassword=<rpcpassword>
 rpcport=22332
 listen=1
