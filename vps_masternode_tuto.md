@@ -10,18 +10,26 @@ Wait until 15 confirmations have been received. It can take ~5 minutes. (If in a
 
 From the tools menu, open the __Debug Console__ and __open the masternode configuration file__
 In your masternode configuration file, input a new line:
+
 ```MN1 <your vps IP>:22331 ```
 
 In the debug console, input the command:
+
 ```masternode genkey```
+
 This gives you your <masternode priv key>. Copy it in your masternode configuration file after 22331 (keep a space between 22331 and the masternode priv key) and keep your masternode priv key secret.
 
 Be sure the 5000IPS payment to MN1 have reached at least 15 confirmations before inputing the following command:
+
 ```masternode outputs```
+
 This gives you a <transaction hash> (long string of nonsense) and an <index> (0 or 1)
 Add this to your masternode configuration file which should now look like this:
+  
 ```MN1 <your vps IP>:22331 <masternode priv key> <transaction hash> <index>```
+
   which might be something similar to the following line:
+  
 ```MN1 111.222.111.222:22331 df1265465465432KSJBFNSKJ aLJKHVBSFDLJHGbcdeSFKJSFf654321abcdef321654abcdef321654 1```
 
 Save and close your masternode configuration file.
