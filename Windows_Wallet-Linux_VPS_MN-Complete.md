@@ -1,26 +1,29 @@
-# IPSUM Windows Wallet - Linux VPS Masternode Instructions
+# IPSUM Windows and Linux Wallet - Linux VPS Masternode Instructions
 
 ## Requirements:
 * A local Masternode Wallet with the required Masternode collateral (5000 IPS).
-* A Linux VPS with a Static IP Address.
+* A GNU/Linux VPS with a Static IP Address referred as __<your vps IP>__ in this document.
 
-* For this guide we are using a Local Windows Wallet with Ubuntu 16.04 running on the VPS. 
-* A 25GB SSD and 1000GB bandwidth will suffice (I suggest www.vultr.com). 
+* For this guide we are using Ubuntu 16.04 on the VPS, but any distro should do as the executables are statically linked. 
+* A 25GB SSD and 1000GB bandwidth will suffice (suggested vultr or digital ocean; use those referral links to support IPS: [vultr](https://www.vultr.com/?ref=7426211) and [Digital Ocean](https://m.do.co/c/0d726bd8cfdc)).
 * Select IPV6 and Private Networking. I will leave DDoS and Automatic backups to you. 
 * Leave SSH Keys and Startup Script blank.
 
 
-## Setup Windows Wallet:
+## Setup Wallet:
 
-* Download the latest Windows wallet from here [Releases](https://github.com/ipsum-network/ips/releases)
-* Run the installer, and leave everything as default.
+* Download the latest wallet for your OS [Releases](https://github.com/ipsum-network/ips/releases)
+* For Windows users:
+  * run the installer, and leave everything as default.
+* For GNU/Linux users:
+  * untar the archive where you please (you may copy ipsd and ips-cli in /usr/local/bin for easy access)
 * Run the qt, then close it again.
 
 ### Syncing
 
 * Open the ips.conf file. It can be found in C:/Users/<Your User>/AppData/Roaming/IPS.
 * Copy the addnodes from [here](https://github.com/ipsum-network/seeds/blob/master/README.md) into this file, then save it.
-* Re-open your IPS qt. It will now sync much more quickly.
+* Re-open your ips-qt. It will now sync much more quickly.
 
 ### Addresses
 
@@ -51,64 +54,70 @@
 
 ### Masternode Info
 
-* Open a blank notepad document.
-* Unlock your wallet.
-* Open the Debug Console (under Tools).
-* Input the command: masternode genkey. This will give you your private key. Do not share this with anyone.
-* Copy this to the notepad file.
-* Input the command: masternode outputs (This will give display your Transaction Hash and Index. It will be a long string of nonsense, and a number (either 1 or 0).
-* Copy these to the notepad file.
+* If you wallet is locked, unlock it.
+* From the tools menu, open the __Debug Console__ and __open the masternode configuration file__.
+* In your masternode configuration file, input a new line:
 
-### That is all you need to do with your Windows Wallet for now.
+```MN1 <your vps IP>:22331 ```
+
+* In the debug console, input the command:
+
+```masternode genkey```
+
+* This gives you your <masternode priv key>. Copy it in your masternode configuration file after 22331 (keep a space between 22331 and the masternode priv key) and keep your masternode priv key secret.
+* Be sure the 5000IPS payment to MN1 have reached at least 15 confirmations before inputing the following command:
+  
+```masternode outputs```
+
+* This gives you a <transaction hash> (long string of nonsense) and an <index> (0 or 1)
+  Add this to your masternode configuration file which should now look like this:
+```MN1 <your vps IP>:22331 <masternode priv key> <transaction hash> <index>```
+  which might be something similar to the following line:
+```MN1 111.222.111.222:22331 df1265465465432KSJBFNSKJ aLJKHVBSFDLJHGbcdeSFKJSFf654321abcdef321654abcdef321654 1```
+* Save and close your masternode configuration file.
+* Close the debug console.
+
+### That is all you need to do with your Wallet for now.
 
 
 ## SETUP MASTERNODE DAEMON:
 
-* Install Putty on your Windows machine
-https://www.putty.org/
-* Log in to your Ubuntu VPS
-Using the login credentials provided by your VPS provider, login using Putty 
-* Type the IP address of your VPS below ‘Host Name (or IP address)’
-* Select ‘SSH’ as Connection type.
-* Click ‘Open’, and a New Terminal should open.
-* It will request your login and password, enter the supplied credentials from your VPS provider. (Keep in mind, your password will not display at log in. Shift+Ins will allow you to paste into putty from Windows).
-* Use the instructions below. Be sure to follow them exactly, for those with limited Linux experience may not be able to roll back changes (talking from experience).
+* Connect and login to your vps using ssh and the credentials provided by your VPS provider:
+  * under GNU/Linux:
+  
+```ssh root@<your vps IP>```
 
-```sudo apt-get -y update```
+  * under Windows using [putty](https://www.putty.org/)(under Windows):
+    * Type the IP address of your VPS below ‘Host Name (or IP address)’
+    * Select ‘SSH’ as Connection type.
+    * Click ‘Open’, and a New Terminal should open.
+    * It will request your login and password, enter the supplied credentials from your VPS provider. (Keep in mind, your password will not display at log in. Shift+Ins will allow you to paste into putty from Windows).
+    
+### Now you should be connected to your VPS, input the following commands in your VPS terminal:
 
-```sudo apt-get -y upgrade```
+* Let's begin with adding a new user for ips, your user will be called ips:
 
-```sudo apt-get -y dist-upgrade```
+```adduser ips```
 
-* Let’s make sure that we have a 3G swapfile. The following instruction set from Vultr has helped many times.
-(https://www.vultr.com/docs/setup-swap-file-on-linux)
-* Once that has been completed, it is now time to download the latest version of the wallet onto your VPS. For now, that is 3.1.0.0 Paste from the instructions below.
+* Answer the questions and choose a [good password](https://www.howtogeek.com/195430/how-to-create-a-strong-password-and-remember-it/)
+
+* Let's switch to our new user:
+
+```sudo -u ips -i```
+
+Now that we are ips, we can retrieve the ips files:
 
 ```wget https://github.com/ipsum-network/ips/releases/download/v3.1.0.0/ips-3.1.0-linux.tar.gz```
 
 * Then we will unpack this file: (This is a very important step).
 
-```tar -xvf ips-3.1.0-linux.tar.gz```
+```tar xzf ips-3.1.0-linux.tar.gz```
 
-* Once that is complete, run the following commands in sequence. Note, some will take a long time, so it is important not to interfere.
-
-```sudo apt autoremove –y```
-
-```sudo apt-get update```
-
-```sudo apt-get install libzmq3-dev libminiupnpc-dev libssl-dev libevent-dev -y```
-
-```sudo apt-get -y install git automake build-essential libtool autotools-dev autoconf pkg-config libssl-dev libboost-all-dev software-properties-common```
-
-```sudo add-apt-repository ppa:bitcoin/bitcoin``` (hit enter at prompt)
-
-```sudo apt-get update```
-
-```sudo apt-get install libdb4.8-dev libdb4.8++-dev```
-
-```sudo apt-get install htop mc```
+* Create a directory for the configuration:
 
 ```mkdir -p ~/.ips```
+
+* and edit the config file:
 
 ```nano ~/.ips/ips.conf```
 
@@ -128,41 +137,56 @@ masternode=1
 port=22331
 externalip=<externalip>:22331
 masternodeprivkey=<masternode private key>
-<INSERT NODES HERE>
 ```
-
+* Use \<Ctrl> + o \<Ctrl> + x to close your ips.conf
 * For <rpcusername> and <rpc password>, use any text you would like. You will not need to remember it, but once you start the daemon, do not change it.
 * masternodeprivkey=<your masternode genkey result from the notepad file>
-* As you might imagine, you insert the seed nodes where <INSERT NODES HERE> is. Find the list [here](https://github.com/ipsum-network/seeds/blob/master/README.md). It is the same as what you have used in your Windows wallet.
 
-```reboot```
+* Now we'll add the nodes with the following sequence of commands:
+```
+wget https://github.com/ipsum-network/seeds/blob/master/README.md
 
-* Reopen Putty, and use the same log in credentials as before. When the command window appears, you will notice the user name has changed to reflect what you called the server at deployment
+sed -ni 's/.*\(addnode=\)/\1/p' README.md
+
+cat README.md >> .ips/ips.conf
+```
+
+* and start the server so that it starts to sync:
 
 ```./ips-3.1.0/bin/ipsd```
 
-## MASTERNODE START
+* and clean this place:
 
-### Back in your Windows Wallet
+```rm ips-3.1.0-linux.tar.gz README.md```
 
-* Under Tools in your Windows Wallet, select “Open Masternode Configuration File”.
-* Input your Masternode info. It should look like this:
+* Check the server is syncing:
 
-* ```<MN ALIAS><VPS_IP:22331><MN GENKEY><TXHash><TXIndex>```
+```watch ./ips-3.1.0/bin/ips-cli getinfo```
 
-* For example
+You should see the __blocks__ field raising
+* close this using \<Ctrl> + c
 
-* ```IPSUM_MN1 167.99.234.180:22331 5dGdBDCYqMae1oRhH7djaBdyAfCGiJV9WgCFSVGmFwF6e5x3vpt 25dGdBDCYqasd123Mae1oRhH7asd123djaBdyAfCGiJV9WgCFSVGmFwF6e5x3vpt 0```
+* You may now leave the vps:
+```
+exit
+exit
+```
+( yes exit twice, once to quit being ips, once to quit the server)
 
-* Save and close this file.
-* (NOTE) If you plan on running multiple MNs from the one Windows wallet, you simply have to enter a new line with the unique information for that MN.
-* Restart your wallet.
-* Once it has re-synced completely, go to the Masternodes tab.
-* Your MN should appear here with the status of “MISSING” and a last seen of sometime in 1970.
-* Click “Start Missing” at the bottom of the window. It will ask you to unlock your wallet. Do so.
-* Your MN will start.
-* Close your Putty window.
-* Wait for the payments to roll in. This will take ~18-24 hours for your first one, and roughly every 6 hours after that.
+
+__Note:__ When you later connect to your vps, connect yourself using ips credentials (username ips and the __good password__ you specified when we created the user ips above)
+
+## Let's finish: back to your wallet
+
+* Go back to your Windows or Linux wallet, close it and restart it.
+* Once it's resynced, go the __masternodes tab__.
+* You should see your MN1 with a "MISSING" status.
+* Click "Start Missing" at the bottom of the windows.
+* The status should now show "ENABLED".
+* Now wait until the masternode is fully synced and then you may admire the active time starting to raise.
+
+Then expect the first masternode reward within __~30h__ and then __every ~14 hours__.
+
 
 ## Post accomplishment in Discord	
 
@@ -174,3 +198,48 @@ Example:
 144.202.51.69:22331
 
 ## Congratulations, you are now the operator of your very own IPS Masternode! This will support the integrity of the IPS network, as well as secure a passive income well into the future.
+
+
+# To go further...
+
+## Enhance security
+
+### Update your vps
+You should keep your vps up-to-date using regularly:
+
+```
+sudo apt update
+sudo apt upgrade
+```
+
+### User connection
+You should use __ssh key authentication__ instead of passwords to connect to your vps and refuse password connections to it.
+
+###  Firewall
+ips uses tcp port 22331 IN and OUT, nothing else.
+You also need http(s) OUT to be able to update your system and 22 IN to be able to connect using ssh.
+
+So the only open ports on your vps should be IN: 22331 and OUT: 22331 80 443
+
+I recommend using ferm as a firewall rule editor on your vps:
+
+```sudo apt install ferm```
+
+Add the following rule in /etc/ferm/ferm.conf
+under INPUT:
+```
+proto tcp
+dport 22331
+mod state state NEW
+ACCEPT;
+```
+
+tcp port 22 is opened by default and OUTPUT policy is ACCEPT (you may cange it to DROP and allow the needed protocols/ports)
+
+After having modifyed your ferm rules, always use:
+```
+sudo ferm -i /etc/ferm/ferm.conf
+```
+to avoid being locked outside your VPS!
+
+__Happy config!__
