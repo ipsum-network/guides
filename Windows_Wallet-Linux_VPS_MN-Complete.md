@@ -2,7 +2,7 @@
 
 ## Requirements:
 * A local Masternode Wallet with the required Masternode collateral (5000 IPS).
-* A GNU/Linux VPS with a Static IP Address referred as __<your vps IP>__ in this document.
+* A GNU/Linux VPS with a Static IP Address referred as __\<your vps IP>__ in this document.
 
 * For this guide we are using Ubuntu 16.04 on the VPS, but any distro should do as the executables are statically linked. 
 * A 25GB SSD and 1000GB bandwidth will suffice (suggested vultr or digital ocean; use those referral links to support IPS: [vultr](https://www.vultr.com/?ref=7426211) and [Digital Ocean](https://m.do.co/c/0d726bd8cfdc)).
@@ -85,7 +85,7 @@
 * Connect and login to your vps using ssh and the credentials provided by your VPS provider:
   * under GNU/Linux:
   
-```ssh root@<your vps IP>```
+  ```ssh root@<your vps IP>```
 
   * under Windows using [putty](https://www.putty.org/)(under Windows):
     * Type the IP address of your VPS below ‘Host Name (or IP address)’
