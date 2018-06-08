@@ -1,0 +1,13 @@
+rpcuser=rpc{{ ansible_hostname }}
+rpcpassword={{ rpcpassword }}
+rpcport={{ rpcport }}
+listen=1
+server=1
+daemon=1
+staking=0
+rpcallowip=127.0.0.1
+logtimestamp=1
+masternode=1
+port={{ mnport }}
+externalip={{ ansible_ssh_host }}:{{ mnport }}
+masternodeprivkey={{ masternode_priv_key }}
