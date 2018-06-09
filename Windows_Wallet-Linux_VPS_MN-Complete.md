@@ -185,7 +185,7 @@ __Note:__ When you later connect to your vps, connect yourself using ips credent
 * The status should now show "ENABLED".
 * Now wait until the masternode is fully synced and then you may admire the active time starting to raise.
 
-Then expect the first masternode reward within __~30h__ and then __every ~14 hours__.
+Then expect the first masternode reward within __~48h__ and then __every ~16 hours__.
 
 
 ## Post accomplishment in Discord	
