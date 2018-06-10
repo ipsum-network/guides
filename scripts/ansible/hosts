@@ -1,0 +1,3 @@
+[installIPS]
+MN1 ansible_ssh_host=<my vps IP> ansible_ssh_pass=<my_secret_password> masternode_priv_key=<my masternode priv key> masternode_tx=<my tx_hash> masternode_index=<tx index 0|1>
+... other MN infos...
