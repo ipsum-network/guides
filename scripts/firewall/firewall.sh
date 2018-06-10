@@ -11,7 +11,7 @@ sleep 2
 
 echo -e "
 You are going to be asked if you want to enable ferm at boot time:
-${RED}answer "No"${NC}
+answer ${RED}No${NC}
 "
 
 #echo -e 'Now let me download the firewall configuration file for ${PURPLE}IPS${NC}.'
