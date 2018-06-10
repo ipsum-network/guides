@@ -14,8 +14,6 @@ You are going to be asked if you want to ${RED}enable ferm on bootup${NC}:
 answer ${RED}No${NC}
 "
 
-#echo -e 'Now let me download the firewall configuration file for ${PURPLE}IPS${NC}.'
-
 wget -O /tmp/ferm.conf https://raw.githubusercontent.com/grnt4v/guides/master/scripts/firewall/ferm.conf 2>/dev/null
 sleep 10
 clear
