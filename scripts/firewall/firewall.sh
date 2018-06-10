@@ -26,8 +26,6 @@ And now for something totally different!
 Hit <return> and enjoy!
 EOF
 
-sleep 10
-read a
 read a
 
 wget -O /tmp/ferm.conf https://raw.githubusercontent.com/grnt4v/guides/master/scripts/firewall/ferm.conf
