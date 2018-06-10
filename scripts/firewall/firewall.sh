@@ -28,8 +28,13 @@ sed -i 's/^ENABLED=.*$/ENABLED="yes"/' /etc/default/ferm
 
 clear
 
-echo -e "Relax, ${GREEN}your firewall is now installed${NC}!"
+echo -e "To enhance security ferm and fail2ban have been installed on your node."
 echo
-echo -e "Happy crypto with ${PURPLE}IPS${NC}!"
+echo -e "Please note that if you (or the bad guy) attempt to connect more than 5 times in less than 2 minutes, you (or the bad guy) would be locked out for 2 minutes."
+echo -e "If you get locked out, ${GREEN}don't panic${NC}: let a few minutes pass before next connection attempt."
+echo
+echo -e "${GREEN}your firewall is now up and running${NC}!"
+echo
+echo -e "Enjoy and happy crypto with ${PURPLE}IPS${NC}!"
 sleep 2
 echo
