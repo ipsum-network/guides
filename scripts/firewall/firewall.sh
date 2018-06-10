@@ -5,16 +5,13 @@ PURPLE='\033[0;35m'
 
 clear
 
-echo -e "Welcome to your firewall installation script for IPS Masternode."
+echo -e "Welcome to your ${GREEN}firewall installation script${NC} for ${PURPLE}IPS${NC} Masternode."
 
 sleep 2
 
 echo -e "
-You will be asked if you want the firewall to be started at boot time:
-${RED}answer "no"${NC}
-
-I insist
-${RED}Answer no to the following question${NC}
+You are going to be asked if you want to enable ferm at boot time:
+${RED}answer "No"${NC}
 "
 
 #echo -e 'Now let me download the firewall configuration file for ${PURPLE}IPS${NC}.'
@@ -22,10 +19,9 @@ ${RED}Answer no to the following question${NC}
 wget -O /tmp/ferm.conf https://raw.githubusercontent.com/grnt4v/guides/master/scripts/firewall/ferm.conf 2>/dev/null
 sleep 10
 clear
-echo -e "I'm installing your ${GREEN}firewall${NC}..."
-echo -e "Don't forget to answer ${RED}no${NC} to the next question!"
+echo -e "I insist answer ${RED}No${NC} to the next question!"
 
-sleep 8
+sleep 4
 
 apt-get update > /dev/null
 apt-get install -y ferm
