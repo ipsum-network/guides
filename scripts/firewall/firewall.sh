@@ -3,7 +3,7 @@ NC='\033[0m'
 GREEN='\033[0;32m'
 PURPLE='\033[0;35m'
 
-cat << EOF
+echo -e "
 Welcome to your firewall installation script for IPS Masternode.
 
 I will download the firewall rules for you, then install the firewall.
@@ -29,7 +29,7 @@ a few minutes...
 And now for something totally different!
 
 Hit <return> and enjoy!
-EOF
+"
 
 read a
 
@@ -40,7 +40,7 @@ echo -e "I'm installing your ${GREEN}firewall${NC}..."
 echo -e "Don't forget to answer ${RED}no${NC} to the next question!"
 sleep 5
 apt update > /dev/null
-apt install -y ferm
+apt install -y ferm > /dev/null
 
 mv /tmp/ferm.conf /etc/ferm/ferm.conf
 
