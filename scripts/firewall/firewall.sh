@@ -32,6 +32,8 @@ sed -i 's/^ENABLED=.*$/ENABLED="yes"/' /etc/default/ferm
 
 clear
 
-echo "Relax, your firewall is now installed!"
+echo "Relax, ${GREEN}your firewall is now installed${NC}!"
 echo
 echo -e "Happy crypto with ${PURPLE}IPS${NC}!"
+sleep 2
+echo
