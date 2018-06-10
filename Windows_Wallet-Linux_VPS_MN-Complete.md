@@ -138,9 +138,10 @@ port=22331
 externalip=<externalip>:22331
 masternodeprivkey=<masternode private key>
 ```
+* For \<rpcusername> and \<rpc password>, use any text you would like. You will not need to remember it, but once you start the daemon, do not change it.
+* masternodeprivkey=\<your masternode genkey result from the notepad file>
+
 * Use \<Ctrl> + o \<Ctrl> + x to close your ips.conf
-* For <rpcusername> and <rpc password>, use any text you would like. You will not need to remember it, but once you start the daemon, do not change it.
-* masternodeprivkey=<your masternode genkey result from the notepad file>
 
 * Now we'll add the nodes with the following sequence of commands:
 ```
