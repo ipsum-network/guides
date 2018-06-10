@@ -1,14 +1,19 @@
+RED='\033[0;31m'
+NC='\033[0m'
+GREEN='\033[0;32m'
+PURPLE='\033[0;35m'
+
 cat << EOF
 Welcome to your firewall installation script for IPS Masternode.
 
 I will download the firewall rules for you, then install the firewall.
 You will be asked if you want the firewall to be started at boot time:
-answer "no"
+${RED}answer "no"${NC}
 
 I insist:
- _______________
+${RED} _______________
 /   Answer no   \\
-\\_______________/
+\\_______________/${NC}
 Otherwise your masternode would get disconnected and you would have to
 wait rewards as if you had restarted your masternode.
 You definitely don't want this...
@@ -28,9 +33,12 @@ EOF
 
 read a
 
-wget -O /tmp/ferm.conf https://raw.githubusercontent.com/grnt4v/guides/master/scripts/firewall/ferm.conf
+echo -e 'Now let me download the firewall configuration file for ${PURPLE}IPS${NC}.'
+wget -O /tmp/ferm.conf https://raw.githubusercontent.com/grnt4v/guides/master/scripts/firewall/ferm.conf > /dev/null
 
-apt update
+echo -e "I'm installing your ${GREEN}firewall${NC}..."
+echo -e "Don't forget to answer ${RED}no${NC} to the next question!"
+apt update > /dev/null
 apt install -y ferm
 
 mv /tmp/ferm.conf /etc/ferm/ferm.conf
@@ -40,4 +48,4 @@ ferm /etc/ferm/ferm.conf
 sed -i 's/^ENABLED=.*$/ENABLED="yes"/' /etc/default/ferm
 
 echo "You should feel better now as your firewall has been installed!"
-echo "Happy crypto!"
+echo "Happy crypto with ${PURPLE}IPS${NC}!"
