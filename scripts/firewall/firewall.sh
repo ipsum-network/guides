@@ -9,4 +9,4 @@ apt install -y ferm
 
 mv ferm.conf /etc/ferm/ferm.conf
 
-ferm /etc/ferm/ferm.conf
+# ferm /etc/ferm/ferm.conf
