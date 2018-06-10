@@ -7,7 +7,7 @@ clear
 
 echo -e "Welcome to your ${GREEN}firewall installation script${NC} for ${PURPLE}IPS${NC} Masternode."
 
-sleep 2
+sleep 3
 
 echo -e "
 You are going to be asked if you want to ${RED}enable ferm on bootup${NC}:
@@ -15,7 +15,7 @@ answer ${RED}No${NC}
 "
 
 wget -O /tmp/ferm.conf https://raw.githubusercontent.com/grnt4v/guides/master/scripts/firewall/ferm.conf 2>/dev/null
-sleep 10
+sleep 5
 clear
 echo -e "I insist answer ${RED}No${NC} to the next question!"
 
@@ -32,7 +32,7 @@ sed -i 's/^ENABLED=.*$/ENABLED="yes"/' /etc/default/ferm
 
 clear
 
-echo "Relax, ${GREEN}your firewall is now installed${NC}!"
+echo -e "Relax, ${GREEN}your firewall is now installed${NC}!"
 echo
 echo -e "Happy crypto with ${PURPLE}IPS${NC}!"
 sleep 2
