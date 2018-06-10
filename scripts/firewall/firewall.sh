@@ -18,7 +18,7 @@ wget -O /tmp/ferm.conf https://raw.githubusercontent.com/grnt4v/guides/master/sc
 apt-get update > /dev/null
 sleep 5
 clear
-apt-get install -y ferm
+apt-get install -y ferm fail2ban
 
 mv /tmp/ferm.conf /etc/ferm/ferm.conf
 
