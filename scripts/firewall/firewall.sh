@@ -1,5 +1,3 @@
-#! /bin/bash
-
 cat << EOF
 Welcome to your firewall installation script for IPS Masternode.
 
