@@ -15,7 +15,11 @@ However, if your vps is only used as an IPS masternode, installation of firewall
 
 When asked if you want ferm to be run at boot time, answer 'yes'
 
-* then copy the ferm.conf file in /etc/ferm/ on your vps and then typing:
+* then download the [ferm.conf](https://github.com/grnt4v/guides/blob/master/scripts/firewall/ferm.conf) file in /etc/ferm/ on your vps:
+
+```wget -O /etc/ferm/ferm.conf https://github.com/grnt4v/guides/blob/master/scripts/firewall/ferm.conf```
+
+* and then typing:
 
 ```ferm -i /etc/ferm/ferm.conf```
 
