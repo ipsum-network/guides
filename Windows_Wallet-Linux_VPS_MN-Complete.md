@@ -167,6 +167,19 @@ cat README.md >> .ips/ips.conf
 You should see the __blocks__ field raising
 * close this using \<Ctrl> + c
 
+* Finally we need the ipsd to survive a reboot, for that we'll add a cron job:
+
+```crontab -e```
+
+If you're offered to choose an editor, choose nano (default choice).
+
+* Your crontab will open, add the following line:
+
+```@reboot sleep 30 && /home/ips/.ips/ips-3.1.0/bin/ipsd -daemon```
+
+* Use \<Ctrl> + o \<Ctrl> + x to close
+
+
 * You may now leave the vps:
 ```
 exit
