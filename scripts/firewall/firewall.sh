@@ -10,7 +10,7 @@ echo -e "Welcome to your ${GREEN}firewall installation script${NC} for ${PURPLE}
 sleep 2
 
 echo -e "
-You are going to be asked if you want to enable ferm at boot time:
+You are going to be asked if you want to ${RED}enable ferm on bootup${NC}:
 answer ${RED}No${NC}
 "
 
