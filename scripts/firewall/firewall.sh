@@ -28,6 +28,7 @@ And now for something totally different!
 Hit <return> and enjoy!
 EOF
 
+sleep 10
 read a
 read a
 
