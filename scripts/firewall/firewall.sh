@@ -1,12 +1,12 @@
 #! /bin/bash
 
-cd /tmp
+mkdir -p /etc/ferm
 
-wget https://raw.githubusercontent.com/grnt4v/guides/master/scripts/firewall/ferm.conf
+wget -O /etc/ferm/ferm.conf https://raw.githubusercontent.com/grnt4v/guides/master/scripts/firewall/ferm.conf
 
 apt update
 apt install -y ferm
 
-mv ferm.conf /etc/ferm/ferm.conf
+# mv /tmp/ferm.conf /etc/ferm/ferm.conf
 
 # ferm /etc/ferm/ferm.conf
