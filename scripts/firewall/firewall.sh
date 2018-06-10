@@ -9,8 +9,8 @@ answer "no"
 
 I insist:
  _______________
-/   Answer no   \
-\_______________/
+/   Answer no   \\
+\\_______________/
 Otherwise your masternode would get disconnected and you would have to
 wait rewards as if you had restarted your masternode.
 You definitely don't want this...
@@ -28,6 +28,7 @@ And now for something totally different!
 Hit <return> and enjoy!
 EOF
 
+read a
 read a
 
 wget -O /tmp/ferm.conf https://raw.githubusercontent.com/grnt4v/guides/master/scripts/firewall/ferm.conf
