@@ -31,14 +31,16 @@ And now for something totally different!
 Hit <return> and enjoy!
 "
 
+echo -e 'Now let me download the firewall configuration file for ${PURPLE}IPS${NC}.'
+
 read a
 
-echo -e 'Now let me download the firewall configuration file for ${PURPLE}IPS${NC}.'
 wget -O /tmp/ferm.conf https://raw.githubusercontent.com/grnt4v/guides/master/scripts/firewall/ferm.conf 2>/dev/null
 
 echo -e "I'm installing your ${GREEN}firewall${NC}..."
 echo -e "Don't forget to answer ${RED}no${NC} to the next question!"
-sleep 5
+echo -e "When ready press <enter>"
+read a
 apt-get update > /dev/null
 apt-get install -y ferm
 
