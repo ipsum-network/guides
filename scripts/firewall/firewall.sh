@@ -32,5 +32,8 @@ ferm /etc/ferm/ferm.conf
 
 sed -i 's/^ENABLED=.*$/ENABLED="yes"/' /etc/default/ferm
 
+clear
+
 echo "Relax, your firewall is now installed!"
+echo
 echo -e "Happy crypto with ${PURPLE}IPS${NC}!"
