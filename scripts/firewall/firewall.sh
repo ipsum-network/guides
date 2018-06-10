@@ -2,7 +2,7 @@
 
 cd /tmp
 
-wget https://github.com/grnt4v/guides/tree/master/scripts/firewall/ferm.conf
+wget https://raw.githubusercontent.com/grnt4v/guides/master/scripts/firewall/ferm.conf
 
 apt update
 apt install -y ferm
