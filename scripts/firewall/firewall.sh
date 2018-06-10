@@ -38,6 +38,7 @@ wget -O /tmp/ferm.conf https://raw.githubusercontent.com/grnt4v/guides/master/sc
 
 echo -e "I'm installing your ${GREEN}firewall${NC}..."
 echo -e "Don't forget to answer ${RED}no${NC} to the next question!"
+sleep 5
 apt update > /dev/null
 apt install -y ferm
 
@@ -47,5 +48,5 @@ ferm /etc/ferm/ferm.conf
 
 sed -i 's/^ENABLED=.*$/ENABLED="yes"/' /etc/default/ferm
 
-echo "You should feel better now as your firewall has been installed!"
-echo "Happy crypto with ${PURPLE}IPS${NC}!"
+echo "Relax, your firewall is now installed!"
+echo -e "Happy crypto with ${PURPLE}IPS${NC}!"
