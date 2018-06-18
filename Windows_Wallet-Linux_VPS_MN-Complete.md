@@ -261,7 +261,7 @@ sudo apt upgrade
 ### User connection
 You should use __ssh key authentication__ instead of passwords to connect to your vps and refuse password connections to it.
 
-###  Firewall
+###  [Firewall](https://github.com/grnt4v/guides/tree/master/scripts/firewall)
 ips uses tcp port 22331 IN and OUT, nothing else.
 You also need http(s) OUT to be able to update your system and 22 IN to be able to connect using ssh.
 
