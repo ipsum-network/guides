@@ -16,12 +16,12 @@
 * For Windows users:
   * run the installer, and leave everything as default.
 * For GNU/Linux users:
-  * untar the archive where you please (you may copy ipsd and ips-cli in /usr/local/bin for easy access)
+* untar the archive where you please (you may copy ips-qt, ipsd and ips-cli in /usr/local/bin for easy access)
 * Run the qt, then close it again.
 
 ### Syncing
 
-* Open the ips.conf file. It can be found in C:/Users/<Your User>/AppData/Roaming/IPS.
+* Open the ips.conf file. It can be found in C:/Users/<Your User>/AppData/Roaming/IPS under Windows, .ips/ips.conf under GNU/Linux.
 * Copy the addnodes from [here](https://github.com/ipsum-network/seeds/blob/master/README.md) into this file, then save it.
 * Re-open your ips-qt. It will now sync much more quickly.
 
@@ -54,7 +54,7 @@
 
 ### Masternode Info
 
-* If you wallet is locked, unlock it.
+* If your wallet is locked, unlock it.
 * From the tools menu, open the __Debug Console__ and __open the masternode configuration file__.
 * In your masternode configuration file, input a new line:
 
@@ -64,17 +64,23 @@
 
 ```masternode genkey```
 
-* This gives you your <masternode priv key>. Copy it in your masternode configuration file after 22331 (keep a space between 22331 and the masternode priv key) and keep your masternode priv key secret.
+* This gives you your \<masternode privkey>. Copy it in your masternode configuration file after 22331 (keep a space between 22331 and the masternode privkey) and keep your masternode priv key secret.
+
 * Be sure the 5000IPS payment to MN1 have reached at least 15 confirmations before inputing the following command:
   
 ```masternode outputs```
 
-* This gives you a <transaction hash> (long string of nonsense) and an <index> (0 or 1)
+* This gives you a \<transaction hash> (long string of nonsense) and an \<index> (0 or 1)
   Add this to your masternode configuration file which should now look like this:
-```MN1 <your vps IP>:22331 <masternode priv key> <transaction hash> <index>```
-  which might be something similar to the following line:
+  
+```MN1 <your vps IP>:22331 <masternode privkey> <transaction hash> <index>```
+
+  similar to the following line:
+  
 ```MN1 111.222.111.222:22331 df1265465465432KSJBFNSKJ aLJKHVBSFDLJHGbcdeSFKJSFf654321abcdef321654abcdef321654 1```
+
 * Save and close your masternode configuration file.
+
 * Close the debug console.
 
 ### That is all you need to do with your Wallet for now.
@@ -93,13 +99,13 @@
     * Click ‘Open’, and a New Terminal should open.
     * It will request your login and password, enter the supplied credentials from your VPS provider. (Keep in mind, your password will not display at log in. Shift+Ins will allow you to paste into putty from Windows).
     
-### Now you should be connected to your VPS, input the following commands in your VPS terminal:
+### Now we should be connected to our VPS, let's input the following commands in our VPS terminal:
 
-* Let's begin with adding a new user for ips, your user will be called ips:
+* Let's begin with adding a new user for ips, our user will be called ips:
 
 ```adduser ips```
 
-* Answer the questions and choose a [good password](https://www.howtogeek.com/195430/how-to-create-a-strong-password-and-remember-it/)
+Answer the questions and choose a [good password](https://www.howtogeek.com/195430/how-to-create-a-strong-password-and-remember-it/)
 
 * Let's switch to our new user:
 
@@ -109,13 +115,32 @@ Now that we are ips, we can retrieve the ips files:
 
 ```wget https://github.com/ipsum-network/ips/releases/download/v3.1.0.0/ips-3.1.0-linux.tar.gz```
 
-* Then we will unpack this file: (This is a very important step).
+unpack them:
 
 ```tar xzf ips-3.1.0-linux.tar.gz```
 
-* Create a directory for the configuration:
+This will create a directory ips-3.1.0.
 
-```mkdir -p ~/.ips```
+* We may now revert to root:
+```
+exit
+```
+
+and place the programs in /usr/local/bin so that we won't need full path when running our IPS tools:
+```
+cp ./ips-3.1.0/bin/ips* /usr/local/bin
+chown root:root /usr/local/bin/ips*
+```
+
+* let's become ips user again:
+```
+sudo -u ips -i
+```
+Create a directory for the configuration:
+
+```mkdir ~/.ips```
+
+and edit the config file:
 
 * and edit the config file:
 
@@ -136,12 +161,13 @@ logtimestamps=1
 masternode=1
 port=22331
 externalip=<externalip>:22331
-masternodeprivkey=<masternode private key>
+
+masternodeprivkey=<masternode privkey>
 ```
 * For \<rpcusername> and \<rpc password>, use any text you would like. You will not need to remember it, but once you start the daemon, do not change it.
-* masternodeprivkey=\<your masternode genkey result from the notepad file>
+* \<masternode privkey> is the key we obtained earlier using ```masternode genkey``` in the debug console of our wallet
 
-* Use \<Ctrl> + o \<Ctrl> + x to close your ips.conf
+* Use \<Ctrl> + o to save and \<Ctrl> + x to close our ips.conf
 
 * Now we'll add the nodes with the following sequence of commands:
 ```
@@ -152,11 +178,13 @@ sed -ni 's/.*\(addnode=\)/\1/p' README.md
 cat README.md >> .ips/ips.conf
 ```
 
-* and start the server so that it starts to sync:
 
-```./ips-3.1.0/bin/ipsd```
+We may now start the server so that it begins to sync (note we don't need the full path to ipsd as it is in our $PATH variable):
+```
+ipsd -daemon
+```
 
-* and clean this place:
+* Let's clean this place:
 
 ```rm ips-3.1.0-linux.tar.gz README.md```
 
@@ -167,13 +195,25 @@ cat README.md >> .ips/ips.conf
 You should see the __blocks__ field raising
 * close this using \<Ctrl> + c
 
-* You may now leave the vps:
-```
-exit
-exit
-```
-( yes exit twice, once to quit being ips, once to quit the server)
 
+* to allow ipsd to start after a reboot we'll set a cronjob:
+
+```crontab -e```
+
+Choose nano as editor (or the one you prefer), then insert a new line:
+
+```@reboot sleep 30 && /usr/local/bin/ipsd -daemon```
+
+Save and close (if using nano as you now know \<Ctrl> + o to save, \<Ctrl> + x to quit)
+It should say your crontab has been updated.
+
+* You may safely exit the vps:
+```
+exit
+exit
+```
+
+Yes, type exit twice: first one to revert to root and second one to exit the vps.
 
 __Note:__ When you later connect to your vps, connect yourself using ips credentials (username ips and the __good password__ you specified when we created the user ips above)
 
@@ -186,8 +226,7 @@ __Note:__ When you later connect to your vps, connect yourself using ips credent
 * The status should now show "ENABLED".
 * Now wait until the masternode is fully synced and then you may admire the active time starting to raise.
 
-Then expect the first masternode reward within __~30h__ and then __every ~14 hours__.
-
+Then expect the first masternode reward within __~60h__ and then __every ~20 hours__.
 
 ## Post accomplishment in Discord	
 
@@ -199,6 +238,16 @@ Example:
 144.202.51.69:22331
 
 ## Congratulations, you are now the operator of your very own IPS Masternode! This will support the integrity of the IPS network, as well as secure a passive income well into the future.
+
+
+## Memo
+
+Here's a list of common commands to be used on the vps to check MN' status:
+```
+ips-cli getinfo
+ips-cli mnsync status
+ips-cli masternode status
+```
 
 
 # To go further...
@@ -216,7 +265,9 @@ sudo apt upgrade
 ### User connection
 You should use __ssh key authentication__ instead of passwords to connect to your vps and refuse password connections to it.
 
-###  Firewall
+
+###  [Firewall](https://github.com/grnt4v/guides/tree/master/scripts/firewall)
+
 ips uses tcp port 22331 IN and OUT, nothing else.
 You also need http(s) OUT to be able to update your system and 22 IN to be able to connect using ssh.
 

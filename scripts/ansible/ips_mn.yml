@@ -1,0 +1,88 @@
+- name: installation masternode IPS
+  hosts: installIPS
+  become: False
+  vars:
+          ips_cli: files/ips-3.1.0/bin/ips-cli
+          ipsd: files/ips-3.1.0/bin/ipsd
+          password: "{{ 999999999999 | random | to_uuid | password_hash('sha512') }}"
+          rpcpassword: "{{ 999999999999 | random | to_uuid }}"
+          rpcport: 22332
+          mnport: 22331
+          ansible_ssh_user: root
+  tasks:
+          - name: create user ips
+            user:
+                    name: ips
+                    state: present
+                    update_password: on_create
+                    password: "{{ password }}"
+                    shell: /bin/bash
+
+          - name: suppress password for user ips
+            lineinfile:
+                    dest: /etc/shadow
+                    regexp: '^ips:'
+                    line: 'ips:*:17670:0:99999:7:::'
+                    validate: pwck -rq %s
+
+          - name: copy Ipsum utils
+            copy:
+                    src='{{ item.src }}'
+                    dest='/usr/local/bin/{{ item.dest }}'
+                    mode=0755
+                    owner=root
+                    group=root
+            with_items:
+                    - { src: '{{ ips_cli }}', dest: 'ips-cli' }
+                    - { src: '{{ ipsd }}', dest: 'ipsd' }
+
+          - name: create .ips directory
+            file: path=/home/ips/.ips state=directory owner=ips group=ips mode=0750
+
+          - name: create ips.conf
+            template:
+                    src: templates/mn.conf.j2
+                    dest: /home/ips/.ips/ips.conf
+                    owner: ips
+                    group: ips
+                    mode: 0640
+
+          - name: retrieve nodes
+            get_url:
+                    url: https://github.com/ipsum-network/seeds/blob/master/README.md
+                    dest: /tmp/seeds.txt
+                    validate_certs: no
+
+          - name: extract nodeslist
+            command: sed -n 's/.*\(addnode=\)/\1/p' /tmp/seeds.txt
+            register: nodes
+
+          - name: add nodes to ips
+            lineinfile:
+                    # dest should be change to path from ansible 2.3 onward
+                    dest: /home/ips/.ips/ips.conf
+                    line: '{{ nodes.stdout }}'
+
+          - name: start ipsd
+            command: /usr/local/bin/ipsd -daemon
+            become: yes
+            become_user: ips
+
+          - name: suppress seeds.txt
+            file:
+                    path: /tmp/seeds.txt
+                    state: absent
+
+          - name: modify masternode.conf
+            lineinfile:
+                    # dest should be changed to path from 2.3 onward
+                    dest: /home/ips/.ips/masternode.conf
+                    regexp: '^{{ inventory_hostname }}'
+                    line: '{{ inventory_hostname }} {{ ansible_ssh_host }}:{{ mnport }} {{masternode_priv_key }} {{ masternode_tx }} {{ masternode_index }}'
+
+          - name: add a cronjob to restart ipsd on reboot
+            cron:
+                    name: "starts ipsd on reboot"
+                    special_time: reboot
+                    job: "sleep 30 && /usr/local/bin/ipsd -daemon"
+                    user: ips
