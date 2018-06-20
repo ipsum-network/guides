@@ -16,7 +16,7 @@
 * For Windows users:
   * run the installer, and leave everything as default.
 * For GNU/Linux users:
-  * untar the archive where you please (you may copy ips-qt, ipsd and ips-cli in /usr/local/bin for easy access)
+* untar the archive where you please (you may copy ips-qt, ipsd and ips-cli in /usr/local/bin for easy access)
 * Run the qt, then close it again.
 
 ### Syncing
@@ -142,6 +142,8 @@ Create a directory for the configuration:
 
 and edit the config file:
 
+* and edit the config file:
+
 ```nano ~/.ips/ips.conf```
 
 * Copy/paste:
@@ -159,6 +161,7 @@ logtimestamps=1
 masternode=1
 port=22331
 externalip=<externalip>:22331
+
 masternodeprivkey=<masternode privkey>
 ```
 * For \<rpcusername> and \<rpc password>, use any text you would like. You will not need to remember it, but once you start the daemon, do not change it.
@@ -192,6 +195,7 @@ ipsd -daemon
 You should see the __blocks__ field raising
 * close this using \<Ctrl> + c
 
+
 * to allow ipsd to start after a reboot we'll set a cronjob:
 
 ```crontab -e```
@@ -224,7 +228,6 @@ __Note:__ When you later connect to your vps, connect yourself using ips credent
 
 Then expect the first masternode reward within __~60h__ and then __every ~20 hours__.
 
-
 ## Post accomplishment in Discord	
 
 *After you have setup everything please take a screen capture of your node running in your wallet or type the IP and post it in #mn-hodler.
@@ -235,6 +238,7 @@ Example:
 144.202.51.69:22331
 
 ## Congratulations, you are now the operator of your very own IPS Masternode! This will support the integrity of the IPS network, as well as secure a passive income well into the future.
+
 
 ## Memo
 
@@ -261,7 +265,9 @@ sudo apt upgrade
 ### User connection
 You should use __ssh key authentication__ instead of passwords to connect to your vps and refuse password connections to it.
 
+
 ###  [Firewall](https://github.com/grnt4v/guides/tree/master/scripts/firewall)
+
 ips uses tcp port 22331 IN and OUT, nothing else.
 You also need http(s) OUT to be able to update your system and 22 IN to be able to connect using ssh.
 
