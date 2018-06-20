@@ -128,7 +128,7 @@ exit
 
 and place the programs in /usr/local/bin so that we won't need full path when running our IPS tools:
 ```
-cp ./ips-3.1.0/bin/ips* /usr/local/bin
+cp /home/ips/ips-3.1.0/bin/ips* /usr/local/bin
 chown root:root /usr/local/bin/ips*
 ```
 
